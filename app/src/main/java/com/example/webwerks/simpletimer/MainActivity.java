@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
    private Button pausebutton;
    private Button resetbutton;
    private Chronometer chronomet;
-   private Long pause;
+   private long pause;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         startbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //pause=SystemClock.elapsedRealtime();
              if(pause != 0){
-                 chronomet.setBase(SystemClock.elapsedRealtime());
+                 chronomet.setBase(chronomet.getBase()+SystemClock.elapsedRealtime()-pause);
              }else{
                  chronomet.setBase(SystemClock.elapsedRealtime());
              }
