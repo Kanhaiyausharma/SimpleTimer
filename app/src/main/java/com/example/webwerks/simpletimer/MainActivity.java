@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
              chronomet.start();
              startbutton.setEnabled(false);
              pausebutton.setEnabled(true);
+             resetbutton.setEnabled(true);
+
             }
         });
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 chronomet.stop();
                 pausebutton.setEnabled(false);
+                resetbutton.setEnabled(false);
                 startbutton.setEnabled(true);
                 chronomet.setBase(SystemClock.elapsedRealtime());
                 pause= (long)0;
